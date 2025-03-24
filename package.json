@@ -14,20 +14,27 @@
   },
   "dependencies": {
     "@capacitor/app": "7.0.0",
+    "@capacitor/camera": "^7.0.0",
     "@capacitor/core": "7.1.0",
     "@capacitor/haptics": "7.0.0",
     "@capacitor/ios": "7.1.0",
     "@capacitor/keyboard": "7.0.0",
     "@capacitor/status-bar": "7.0.0",
+    "@hookform/resolvers": "^4.1.3",
     "@ionic/react": "^8.0.0",
     "@ionic/react-router": "^8.0.0",
     "@types/react-router": "^5.1.20",
     "@types/react-router-dom": "^5.3.3",
+    "express": "^4.21.2",
     "ionicons": "^7.0.0",
+    "mongoose": "^8.13.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.54.2",
     "react-router": "^5.3.4",
-    "react-router-dom": "^5.3.4"
+    "react-router-dom": "^5.3.4",
+    "react-virtuoso": "^4.12.5",
+    "zod": "^3.24.2"
   },
   "devDependencies": {
     "@capacitor/cli": "7.1.0",

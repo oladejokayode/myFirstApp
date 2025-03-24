@@ -1,16 +1,8 @@
-import React, { useContext } from "react";
-import { UserContext } from "./UserContext"; // ✅ Ensure correct import
-import * as UserContextModule from "./UserContext";
-console.log("UserContextModule:", UserContextModule);
+import React from "react";
+import { useUserContext } from "./UserContext"; // ✅ Import correctly
 
 const UserProfileDetails: React.FC = () => {
-  const context = useContext(UserContext);
-
-  if (!context) {
-    return <p>Loading...</p>;
-  }
-
-  const { user } = context;
+  const { user } = useUserContext(); // ✅ Use the custom hook safely
 
   return (
     <div>
