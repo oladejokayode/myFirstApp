@@ -1,2 +1,45 @@
-/* For information on how to create your own theme, please see:
-http://ionicframework.com/docs/theming/ */
+/* src/theme/variables.css or src/global.css */
+:root {
+    --ion-background-color: #000; /* Black background */
+    --ion-text-color: #fff; /* White text */
+  }
+  
+  /* Apply background globally */
+  body {
+    background-color: black !important;
+    color: white !important;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Improve container formatting */
+  .center-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1); /* Slight transparency */
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  /* Style the IonToolbar */
+  ion-toolbar {
+    --background: #222; /* Darker shade */
+    --color: white;
+  }
+  
+  /* Style buttons (if needed) */
+  button {
+    background: linear-gradient(45deg, #ff5722, #ff9800);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  button:hover {
+    opacity: 0.9;
+  }
+  
