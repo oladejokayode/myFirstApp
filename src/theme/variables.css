@@ -6,7 +6,7 @@
   
   /* Apply background globally */
   body {
-    background-color: black !important;
+    background-color: yellowgreen !important;
     color: white !important;
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -25,7 +25,7 @@
   
   /* Style the IonToolbar */
   ion-toolbar {
-    --background: #222; /* Darker shade */
+    --background: #222222; /* Darker shade */
     --color: white;
   }
   
