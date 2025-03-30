@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonInput, IonButton } from "@ionic/react";
-import { login } from "./auth.service"; // Import Firebase auth function
+//import { login } from "./auth.service"; // Import Firebase auth function
+import axios, { AxiosError } from "axios";
 
 const LoginPage: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -8,11 +9,18 @@ const LoginPage: React.FC = () => {
 
   const handleLogin = async () => {
     try {
-      const user = await login(email, password);
-      console.log("User logged in:", user);
-    } catch (error) {
-      console.error("Login error:", error);
+        const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/login`, { email, password });
+        console.log("User logged in:", response.data);
+        alert("Login successful!");
+    } catch (err: unknown) {  // Use `unknown` to ensure type safety
+      if (axios.isAxiosError(err)) {
+        console.error("Login error:", err.response?.data || err.message);
+      } else {
+        console.error("An unexpected error occurred:", err);
+      }
+      alert("Login failed!");
     }
+
   };
 
   return (

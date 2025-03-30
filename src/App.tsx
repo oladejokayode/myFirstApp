@@ -8,6 +8,7 @@ import { Route, Redirect } from "react-router-dom";
 import { home, person, list, camera, logIn } from "ionicons/icons"; // Added home icon
 
 import SignupForm from "./nativedevice_features/SignupForms";
+import StudentList from "./nativedevice_features/StudentList";
 import List from "./nativedevice_features/List";
 import CameraComponent from "./nativedevice_features/CameraComponent";
 import LoginPage from "./login.page"; 
@@ -38,18 +39,17 @@ const App: React.FC = () => {
 
           <IonTabs>
             <IonRouterOutlet>
-              {/* Routes */}
               <Route exact path="/home" component={Home} />
               <Route exact path="/login" component={LoginPage} />
               <Route exact path="/signup" component={SignupForm} />
+              <Route exact path="/students" component={StudentList} />
               <Route exact path="/list" component={List} />
               <Route exact path="/camera" component={CameraComponent} />
               <Route exact path="/">
-                <Redirect to="/home" /> {/* Home is now the default */}
+                <Redirect to="/home" />
               </Route>
             </IonRouterOutlet>
 
-            {/* Tab Navigation */}
             <IonTabBar slot="bottom">
               <IonTabButton tab="home" href="/home">
                 <IonIcon icon={home} />
@@ -62,6 +62,10 @@ const App: React.FC = () => {
               <IonTabButton tab="signup" href="/signup">
                 <IonIcon icon={person} />
                 <IonLabel>Signup</IonLabel>
+              </IonTabButton>
+              <IonTabButton tab="students" href="/students">
+                <IonIcon icon={list} />
+                <IonLabel>Student List</IonLabel>
               </IonTabButton>
               <IonTabButton tab="list" href="/list">
                 <IonIcon icon={list} />

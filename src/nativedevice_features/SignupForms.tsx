@@ -2,6 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import axios from "axios";
 
 const signupSchema = z.object({
   name: z.string().min(3, "Name must be at least 3 characters"),
@@ -20,10 +21,19 @@ const SignupForm: React.FC = () => {
     resolver: zodResolver(signupSchema),
   });
 
-  const onSubmit = (data: SignupFormValues) => {
-    console.log("Form Data:", data);
+  const onSubmit = async (data: SignupFormValues) => {
+    try {
+      const res = await axios.post("http://localhost:5000/register", data);
+      alert(res.data.message); // Show success message
+    } catch (error: any) { // Explicitly typing error as 'any'
+      if (axios.isAxiosError(error) && error.response) {
+        alert(error.response.data?.error || "Signup failed"); // Handle API error
+      } else {
+        alert("An unexpected error occurred"); // Handle unexpected errors
+      }
+    }
   };
-
+  
   return (
     <div style={{ maxWidth: "400px", margin: "auto", padding: "20px", background: "#222", color: "#fff", borderRadius: "10px" }}>
       <h2>Signup</h2>
