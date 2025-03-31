@@ -5,16 +5,17 @@ import {
 } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 import { Route, Redirect } from "react-router-dom";
-import { home, person, list, camera, logIn } from "ionicons/icons"; // Added home icon
+import { home, person, list, camera, logIn, chatbubble } from "ionicons/icons"; // Added chat icon
 
 import SignupForm from "./nativedevice_features/SignupForms";
 import StudentList from "./nativedevice_features/StudentList";
 import List from "./nativedevice_features/List";
 import CameraComponent from "./nativedevice_features/CameraComponent";
-import LoginPage from "./login.page"; 
+import LoginPage from "./login.page";
+import Chatbot from "./components/Chatbot";
 
 import '@ionic/react/css/core.css';
-import "./theme/variables.css"; 
+import "./theme/variables.css";
 
 // New Home Component
 const Home: React.FC = () => (
@@ -45,6 +46,7 @@ const App: React.FC = () => {
               <Route exact path="/students" component={StudentList} />
               <Route exact path="/list" component={List} />
               <Route exact path="/camera" component={CameraComponent} />
+              <Route exact path="/chatbot" component={Chatbot} />
               <Route exact path="/">
                 <Redirect to="/home" />
               </Route>
@@ -74,6 +76,10 @@ const App: React.FC = () => {
               <IonTabButton tab="camera" href="/camera">
                 <IonIcon icon={camera} />
                 <IonLabel>Camera</IonLabel>
+              </IonTabButton>
+              <IonTabButton tab="chatbot" href="/chatbot">
+                <IonIcon icon={chatbubble} />
+                <IonLabel>Chatbot</IonLabel>
               </IonTabButton>
             </IonTabBar>
           </IonTabs>
